@@ -1,0 +1,16 @@
+resources:
+  jobs:
+    daily_refresh:
+      name: sp500-daily_refresh
+      max_concurrent_runs: 1
+      parameters:
+      - name: collector_manifest
+        default: ''
+      tasks:
+      - task_key: daily_refresh
+        notebook_task:
+          notebook_path: ../notebooks/09_ingest_landed_fmp.py
+          base_parameters:
+            catalog: ${var.catalog}
+            prefix: ${var.prefix}
+            collector_manifest: '{{job.parameters.collector_manifest}}'

@@ -1,0 +1,16 @@
+resources:
+  jobs:
+    backfill:
+      name: sp500-backfill
+      max_concurrent_runs: 1
+      parameters:
+      - name: manifest_path
+        default: ''
+      tasks:
+      - task_key: backfill
+        notebook_task:
+          notebook_path: ../notebooks/05_import_history.py
+          base_parameters:
+            catalog: ${var.catalog}
+            schema: ${var.prefix}_bronze
+            manifest_path: '{{job.parameters.manifest_path}}'

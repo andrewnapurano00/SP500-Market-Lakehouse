@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sp500-datalakehouse"
+version = "0.1.0"
+description = "S&P 500 market-data ingestion, PostgreSQL migration and governed Databricks datasets"
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.2,<4", "numpy>=1.26", "pyarrow>=14", "requests>=2.31", "SQLAlchemy>=2.0", "python-dotenv>=1.0", "pandas-market-calendars>=5.5"]
+
+[project.optional-dependencies]
+postgres = ["psycopg2-binary>=2.9"]
+databricks = ["databricks-sdk>=0.40"]
+test = ["pytest>=8", "build>=1.2"]
+docs = ["Pillow>=10"]
+
+[tool.setuptools.packages.find]
+where = ["ingestion/src", "lakehouse/src"]
+include = ["sp500_ingest*", "sp500_lakehouse*"]
+
+[tool.setuptools.package-dir]
+sp500_ingest = "ingestion/src/sp500_ingest"
+sp500_lakehouse = "lakehouse/src/sp500_lakehouse"

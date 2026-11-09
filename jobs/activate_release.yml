@@ -1,0 +1,25 @@
+resources:
+  jobs:
+    activate_release:
+      name: sp500-activate-verified-gold
+      max_concurrent_runs: 1
+      parameters:
+      - name: binding_path
+        default: ''
+      - name: validation_path
+        default: ''
+      - name: expected_parent_sha256
+        default: ''
+      - name: rollback
+        default: 'false'
+      tasks:
+      - task_key: activate
+        notebook_task:
+          notebook_path: ../notebooks/13_activate_release.py
+          base_parameters:
+            catalog: ${var.catalog}
+            prefix: ${var.prefix}
+            binding_path: '{{job.parameters.binding_path}}'
+            validation_path: '{{job.parameters.validation_path}}'
+            expected_parent_sha256: '{{job.parameters.expected_parent_sha256}}'
+            rollback: '{{job.parameters.rollback}}'

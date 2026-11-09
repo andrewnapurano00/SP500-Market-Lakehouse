@@ -1,0 +1,36 @@
+# Credentials and operator-local settings
+.env
+.env.*
+!.env.example
+.databrickscfg
+*.pem
+*.key
+config/operator.json
+config/data_source.json
+config/source_mapping.local.json
+# Generated datasets, artifacts and environment files
+outputs/
+landing/
+checkpoints/
+exports/
+*.parquet
+*.csv
+*.jsonl
+*.db
+*.sqlite*
+*.pkl
+*.pickle
+*.joblib
+*.zip
+*.whl
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.databricks/
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store

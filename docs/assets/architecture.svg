@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1020" viewBox="0 0 1600 1020" role="img" aria-labelledby="title desc">
+<title id="title">S&amp;P 500 Market Lakehouse architecture</title><desc id="desc">FMP and read-only PostgreSQL exports feed local collection, governed Landing, Bronze, Silver and Gold. Validated releases update an active registry for downstream consumers.</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#62738b"/></marker></defs>
+<rect width="1600" height="1020" fill="#f5f7fb"/>
+<text x="40" y="67" font-family="Segoe UI,Arial,sans-serif" font-size="40" fill="#162b45" font-weight="700">S&amp;P 500 Market Lakehouse</text>
+<text x="42" y="102" font-family="Segoe UI,Arial,sans-serif" font-size="22" fill="#526780" font-weight="400">Source evidence. Canonical identities. Reproducible analytics datasets.</text>
+<rect x="815" y="130" width="745" height="727" rx="22" fill="#eaf1fb" stroke="#c9d8ed" stroke-width="2"/>
+<text x="842" y="161" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#365d91" font-weight="700">DATABRICKS  /  UNITY CATALOG</text>
+<rect x="40" y="153" width="320" height="178" rx="16" fill="#ffffff" stroke="#dce4ef" stroke-width="2"/>
+<rect x="40" y="153" width="7" height="178" rx="3" fill="#176c78"/>
+<text x="64" y="194" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#162b45" font-weight="700">Financial Modeling Prep</text>
+<text x="64" y="229" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Prices &amp; financial statements</text>
+<text x="64" y="256" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Profiles &amp; membership</text>
+<text x="64" y="283" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Sector, macro, VIX, Treasury</text>
+<rect x="40" y="363" width="320" height="133" rx="16" fill="#ffffff" stroke="#dce4ef" stroke-width="2"/>
+<rect x="40" y="363" width="7" height="133" rx="3" fill="#4a6ea8"/>
+<text x="64" y="404" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#162b45" font-weight="700">Historical PostgreSQL</text>
+<text x="64" y="439" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Schema-only recovery DDL</text>
+<text x="64" y="466" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Consistent read-only export</text>
+<rect x="420" y="153" width="345" height="343" rx="16" fill="#ffffff" stroke="#dce4ef" stroke-width="2"/>
+<rect x="420" y="153" width="7" height="343" rx="3" fill="#176c78"/>
+<text x="444" y="194" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#162b45" font-weight="700">Local collection &amp; export</text>
+<text x="444" y="229" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Python API clients / SQLAlchemy</text>
+<text x="444" y="256" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Explicit dates and request budgets</text>
+<text x="444" y="283" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Raw wrappers + normalized rows</text>
+<text x="444" y="310" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Stable-security route preflight</text>
+<text x="444" y="337" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">SHA256 manifests &amp; checkpoints</text>
+<text x="444" y="364" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">No trained models or trading</text>
+<polyline points="360,238 420,238" fill="none" stroke="#62738b" stroke-width="3" marker-end="url(#arrow)"/>
+<polyline points="360,429 420,429" fill="none" stroke="#62738b" stroke-width="3" marker-end="url(#arrow)"/>
+<polyline points="765,240 844,240" fill="none" stroke="#62738b" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="845" y="190" width="685" height="107" rx="16" fill="#ffffff" stroke="#dce4ef" stroke-width="2"/>
+<rect x="845" y="190" width="7" height="107" rx="3" fill="#5078ad"/>
+<text x="869" y="231" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#162b45" font-weight="700">Landing Volumes</text>
+<text x="869" y="266" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Immutable JSONL / Parquet + committed capture manifests</text>
+<polyline points="1187,297 1187,324" fill="none" stroke="#62738b" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="845" y="326" width="685" height="107" rx="16" fill="#fff4e9" stroke="#eacbab" stroke-width="2"/>
+<rect x="845" y="326" width="7" height="107" rx="3" fill="#b97533"/>
+<text x="869" y="367" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#162b45" font-weight="700">Bronze | source evidence</text>
+<text x="869" y="402" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Raw responses, source revisions and tagged PG reconstruction</text>
+<polyline points="1187,433 1187,460" fill="none" stroke="#62738b" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="845" y="462" width="685" height="107" rx="16" fill="#f1f4f8" stroke="#c5d0dd" stroke-width="2"/>
+<rect x="845" y="462" width="7" height="107" rx="3" fill="#73849a"/>
+<text x="869" y="503" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#162b45" font-weight="700">Silver | canonical data</text>
+<text x="869" y="538" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Security &amp; membership bridges, typed facts, feature families</text>
+<polyline points="1187,569 1187,596" fill="none" stroke="#62738b" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="845" y="598" width="685" height="107" rx="16" fill="#fff9e5" stroke="#e9d48a" stroke-width="2"/>
+<rect x="845" y="598" width="7" height="107" rx="3" fill="#b58c19"/>
+<text x="869" y="639" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#162b45" font-weight="700">Gold | versioned monthly datasets</text>
+<text x="869" y="674" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Ordered predictors / full membership cohort / separate outcomes</text>
+<polyline points="1187,705 1187,733" fill="none" stroke="#62738b" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="845" y="735" width="685" height="101" rx="16" fill="#e6f4ed" stroke="#a7d2bc" stroke-width="2"/>
+<rect x="845" y="735" width="7" height="101" rx="3" fill="#287953"/>
+<text x="869" y="776" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#162b45" font-weight="700">Validated active-dataset registry</text>
+<text x="869" y="811" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Pinned Delta versions + expected-parent activation</text>
+<rect x="40" y="535" width="725" height="193" rx="16" fill="#ffffff" stroke="#dce4ef" stroke-width="2"/>
+<rect x="40" y="535" width="7" height="193" rx="3" fill="#287953"/>
+<text x="64" y="576" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#162b45" font-weight="700">Release controls &amp; lineage</text>
+<text x="64" y="611" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Capture commits, source hashes and quality/read-back checks</text>
+<text x="64" y="638" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Known-return anchoring; unknown outcomes remain NULL</text>
+<text x="64" y="665" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Immutable release history, rollback and quarantine controls</text>
+<text x="64" y="692" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Failed candidates keep the previous healthy release active</text>
+<polyline points="765,633 800,633 800,785 845,785" fill="none" stroke="#62738b" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="40" y="764" width="725" height="164" rx="16" fill="#ffffff" stroke="#dce4ef" stroke-width="2"/>
+<rect x="40" y="764" width="7" height="164" rx="3" fill="#5078ad"/>
+<text x="64" y="805" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#162b45" font-weight="700">Operational orchestration</text>
+<text x="64" y="840" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Local runner + parameterized Databricks Jobs</text>
+<text x="64" y="867" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Resumable runs / content-addressed wheels and checkpoints</text>
+<text x="64" y="894" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">Optional weekday schedule: machine on and user signed in</text>
+<polyline points="1187,836 1187,892" fill="none" stroke="#62738b" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="845" y="894" width="685" height="91" rx="16" fill="#ffffff" stroke="#c5d0dd" stroke-width="2"/>
+<text x="869" y="935" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#162b45" font-weight="700">Downstream consumers | outside this repository</text>
+<text x="869" y="970" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#475c75" font-weight="400">EDA, training, inference and applications read pinned Gold</text>
+<text x="42" y="990" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#526780" font-weight="400">Repository scope: database creation + ingestion + transformation + dataset contracts.</text>
+</svg>

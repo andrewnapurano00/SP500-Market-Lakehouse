@@ -1,0 +1,40 @@
+resources:
+  jobs:
+    monthly_snapshot:
+      name: sp500-monthly_snapshot
+      max_concurrent_runs: 1
+      parameters:
+      - name: signal_date
+        default: ''
+      - name: as_of
+        default: ''
+      - name: feature_columns_json
+        default: '[]'
+      - name: snapshot_id
+        default: ''
+      - name: run_id
+        default: ''
+      - name: baseline_manifest_sha256
+        default: ''
+      - name: profiles_path
+        default: ''
+      - name: profiles_sha256
+        default: ''
+      - name: previous_binding_path
+        default: ''
+      tasks:
+      - task_key: monthly_snapshot
+        notebook_task:
+          notebook_path: ../notebooks/07_refresh_features.py
+          base_parameters:
+            catalog: ${var.catalog}
+            prefix: ${var.prefix}
+            run_id: '{{job.parameters.run_id}}'
+            signal_date: '{{job.parameters.signal_date}}'
+            as_of: '{{job.parameters.as_of}}'
+            snapshot_id: '{{job.parameters.snapshot_id}}'
+            feature_columns_json: '{{job.parameters.feature_columns_json}}'
+            baseline_manifest_sha256: '{{job.parameters.baseline_manifest_sha256}}'
+            profiles_path: '{{job.parameters.profiles_path}}'
+            profiles_sha256: '{{job.parameters.profiles_sha256}}'
+            previous_binding_path: '{{job.parameters.previous_binding_path}}'

@@ -1,0 +1,95 @@
+bundle:
+  name: sp500-lakehouse
+include:
+- jobs/*.yml
+variables:
+  catalog:
+    description: Writable Unity Catalog catalog supplied by operator
+  prefix:
+    default: sp500
+  existing_cluster_id:
+    description: 'Classic target only: existing UC-capable cluster; unavailable in
+      Free Edition'
+    default: ''
+  serverless_environment_version:
+    description: Serverless environment version supported by workspace
+    default: '4'
+artifacts:
+  default:
+    type: whl
+    build: python -m build --wheel
+    path: .
+targets:
+  free:
+    default: true
+    mode: development
+    resources:
+      jobs:
+        activate_release:
+          environments:
+          - environment_key: sp500
+            spec:
+              environment_version: ${var.serverless_environment_version}
+              dependencies:
+              - ./dist/*.whl
+          tasks:
+          - task_key: activate
+            environment_key: sp500
+        daily_refresh:
+          environments:
+          - environment_key: sp500
+            spec:
+              environment_version: ${var.serverless_environment_version}
+              dependencies:
+              - ./dist/*.whl
+          tasks:
+          - task_key: daily_refresh
+            environment_key: sp500
+        backfill:
+          environments:
+          - environment_key: sp500
+            spec:
+              environment_version: ${var.serverless_environment_version}
+              dependencies:
+              - ./dist/*.whl
+          tasks:
+          - task_key: backfill
+            environment_key: sp500
+        monthly_snapshot:
+          environments:
+          - environment_key: sp500
+            spec:
+              environment_version: ${var.serverless_environment_version}
+              dependencies:
+              - ./dist/*.whl
+          tasks:
+          - task_key: monthly_snapshot
+            environment_key: sp500
+  classic:
+    mode: development
+    resources:
+      jobs:
+        activate_release:
+          tasks:
+          - task_key: activate
+            existing_cluster_id: ${var.existing_cluster_id}
+            libraries:
+            - whl: ./dist/*.whl
+        daily_refresh:
+          tasks:
+          - task_key: daily_refresh
+            existing_cluster_id: ${var.existing_cluster_id}
+            libraries:
+            - whl: ./dist/*.whl
+        backfill:
+          tasks:
+          - task_key: backfill
+            existing_cluster_id: ${var.existing_cluster_id}
+            libraries:
+            - whl: ./dist/*.whl
+        monthly_snapshot:
+          tasks:
+          - task_key: monthly_snapshot
+            existing_cluster_id: ${var.existing_cluster_id}
+            libraries:
+            - whl: ./dist/*.whl

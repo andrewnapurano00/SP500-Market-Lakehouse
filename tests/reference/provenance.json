@@ -1,0 +1,21 @@
+{
+  "stock_technicals.py": {
+    "original_source_sha256": "2b89bb38837019c9c826890ddc36bbe3f06576b363cab0455e1d12573a586fbc",
+    "functions": [
+      "add_technical_features",
+      "normalize_keys"
+    ]
+  },
+  "macro_features.py": {
+    "original_source_sha256": "a9ef016766fe91e98458209c1235c3c27fdf8286a7299adb31e81a16379dd5fd",
+    "functions": [
+      "build_features"
+    ]
+  },
+  "sector_features.py": {
+    "original_source_sha256": "b3a91ef68a104f46db63305f77bfb087af61130174e8a90183ed2d50c963c82e",
+    "functions": [
+      "calculate"
+    ]
+  }
+}
